@@ -1,0 +1,67 @@
+.videoSection {
+  max-width: 900px;
+  margin: 0 auto 56px auto;
+  padding: 38px 12px;
+  text-align: center;
+  background: linear-gradient(120deg, #e6f9f3 70%, #fff 100%);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px #00c08111;
+  position: relative;
+  opacity: 0;
+  animation: videoFadeIn 0.8s forwards;
+}
+@keyframes videoFadeIn {
+  from { opacity: 0; transform: translateY(36px) scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+.heading {
+  font-size: 1.28rem;
+  font-weight: 900;
+  color: #00c081;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #00c08111;
+}
+.desc {
+  font-size: 1.13rem;
+  color: #444;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px #00c08122, 0 0 24px #00c08133;
+  background: #fff;
+  transition: box-shadow 0.22s, transform 0.22s;
+}
+.videoWrapper:hover {
+  box-shadow: 0 16px 48px #00c08133, 0 0 32px #00c08166;
+  transform: scale(1.02) translateY(-4px);
+}
+.video {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border: none;
+}
+@media (max-width: 600px) {
+  .videoSection {
+    margin-bottom: 18px;
+    padding: 12px 2px;
+    border-radius: 14px;
+  }
+  .heading {
+    font-size: 1.01rem;
+  }
+  .desc {
+    font-size: 0.97rem;
+    margin-bottom: 12px;
+  }
+  .videoWrapper {
+    border-radius: 10px;
+  }
+} 

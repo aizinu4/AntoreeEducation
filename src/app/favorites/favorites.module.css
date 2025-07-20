@@ -1,0 +1,151 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 40px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.emptyState h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.emptyState p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0 0 30px 0;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.browseButton {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.browseButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+  }
+  
+  .header {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .emptyState {
+    padding: 60px 20px;
+  }
+  
+  .emptyIcon {
+    font-size: 3rem;
+  }
+  
+  .emptyState h2 {
+    font-size: 1.5rem;
+  }
+  
+  .emptyState p {
+    font-size: 1rem;
+  }
+  
+  .browseButton {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .emptyState {
+    padding: 40px 15px;
+  }
+  
+  .emptyIcon {
+    font-size: 2.5rem;
+  }
+  
+  .emptyState h2 {
+    font-size: 1.3rem;
+  }
+  
+  .emptyState p {
+    font-size: 0.95rem;
+  }
+} 

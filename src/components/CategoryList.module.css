@@ -1,0 +1,96 @@
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 32px;
+  margin: 0 auto 48px auto;
+  max-width: 900px;
+  padding: 32px 12px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  box-shadow: 0 4px 24px #00c08111;
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideInUp 0.8s ease-out forwards;
+}
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card {
+  background: linear-gradient(120deg, #e6f9f3 60%, #fff 100%);
+  border-radius: 22px;
+  box-shadow: 0 2px 16px #00c08111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0 20px 0;
+  cursor: pointer;
+  transition: box-shadow 0.22s, transform 0.22s, border 0.22s, filter 0.22s;
+  border: 2px solid #e6f9f3;
+  transform: skewY(-3deg) scale(1) rotateZ(-2deg);
+  filter: brightness(0.98);
+  opacity: 0;
+  animation: cardFadeIn 0.7s forwards;
+}
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.12s; }
+.card:nth-child(3) { animation-delay: 0.19s; }
+.card:nth-child(4) { animation-delay: 0.26s; }
+.card:nth-child(5) { animation-delay: 0.33s; }
+.card:nth-child(6) { animation-delay: 0.40s; }
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(32px) skewY(-3deg) scale(0.95) rotateZ(-2deg); }
+  to { opacity: 1; transform: skewY(-3deg) scale(1) rotateZ(-2deg); }
+}
+.card:hover {
+  box-shadow: 0 12px 36px #00c08133, 0 0 16px #00c08144;
+  transform: skewY(-3deg) scale(1.07) rotateZ(-2deg) translateY(-8px);
+  border: 2px solid #00c081;
+  filter: brightness(1.04) drop-shadow(0 0 12px #00c08133);
+}
+.icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 16px #00c08122);
+  transition: filter 0.22s, transform 0.22s;
+}
+.card:hover .icon {
+  filter: drop-shadow(0 0 24px #00c08166);
+  transform: scale(1.12) rotateZ(8deg);
+}
+.name {
+  font-size: 1.13rem;
+  font-weight: 800;
+  color: #00c081;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px #00c08111;
+  transition: color 0.18s;
+}
+.card:hover .name {
+  color: #00996b;
+}
+@media (max-width: 600px) {
+  .categories {
+    gap: 12px;
+    margin-bottom: 22px;
+    padding: 12px 2px;
+    border-radius: 14px;
+  }
+  .card {
+    padding: 16px 0 8px 0;
+    border-radius: 12px;
+  }
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+  .name {
+    font-size: 0.99rem;
+  }
+} 

@@ -1,0 +1,283 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #666;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.imageSection {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px 12px 0 0;
+}
+
+.productImage {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.favoriteButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.favoriteButton.favorited {
+  background: #ff6b6b;
+  color: white;
+}
+
+.productInfo {
+  padding: 30px;
+}
+
+.productName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.ratingSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #ffd700;
+  font-size: 18px;
+}
+
+.halfStar {
+  color: #ffd700;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.emptyStar {
+  color: #ddd;
+  font-size: 18px;
+}
+
+.ratingText {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+.priceSection {
+  margin-bottom: 25px;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2ecc71;
+}
+
+.descriptionSection {
+  margin-bottom: 30px;
+}
+
+.descriptionSection h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 15px 0;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.buyButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 150px;
+}
+
+.buyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.addToCartButton {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  padding: 13px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 150px;
+}
+
+.addToCartButton:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .modal {
+    max-width: 95vw;
+    margin: 10px;
+  }
+  
+  .modalContent {
+    flex-direction: column;
+  }
+  
+  .imageSection {
+    padding: 30px 20px;
+  }
+  
+  .productImage {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  
+  .productInfo {
+    padding: 20px;
+  }
+  
+  .productName {
+    font-size: 24px;
+  }
+  
+  .price {
+    font-size: 28px;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .buyButton,
+  .addToCartButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalOverlay {
+    padding: 10px;
+  }
+  
+  .imageSection {
+    padding: 20px 15px;
+  }
+  
+  .productInfo {
+    padding: 15px;
+  }
+  
+  .productName {
+    font-size: 20px;
+  }
+  
+  .price {
+    font-size: 24px;
+  }
+} 

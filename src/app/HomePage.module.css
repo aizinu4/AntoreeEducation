@@ -1,0 +1,50 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 18px;
+}
+.title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 38px;
+  color: #222;
+  letter-spacing: -1.5px;
+  line-height: 1.18;
+  text-shadow: 0 2px 8px #00c08111;
+}
+.filterBar {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 38px;
+  flex-wrap: wrap;
+  background: #e6f9f3;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px #00c08111;
+  padding: 18px 24px;
+  position: relative;
+  z-index: 2;
+  animation: filterFadeIn 0.7s forwards;
+  opacity: 0;
+}
+@keyframes filterFadeIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 600px) {
+  .container {
+    padding: 18px 4px;
+  }
+  .title {
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+  }
+  .filterBar {
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 10px 6px;
+    border-radius: 10px;
+  }
+} 

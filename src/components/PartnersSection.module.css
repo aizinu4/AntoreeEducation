@@ -1,0 +1,96 @@
+.partners {
+  max-width: 1100px;
+  margin: 0 auto 56px auto;
+  padding: 38px 12px;
+  text-align: center;
+  background: linear-gradient(120deg, #e6f9f3 70%, #fff 100%);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px #00c08111;
+  position: relative;
+}
+.heading {
+  font-size: 1.28rem;
+  font-weight: 900;
+  color: #00c081;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #00c08111;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 32px;
+  justify-items: center;
+}
+.logoBox {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px #00c08111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 10px 14px 10px;
+  transition: box-shadow 0.18s, transform 0.18s, border 0.18s, filter 0.18s;
+  border: 2px solid #e6f9f3;
+  cursor: pointer;
+  opacity: 0;
+  animation: partnerFadeIn 0.7s forwards;
+}
+.logoBox:nth-child(1) { animation-delay: 0.05s; }
+.logoBox:nth-child(2) { animation-delay: 0.12s; }
+.logoBox:nth-child(3) { animation-delay: 0.19s; }
+.logoBox:nth-child(4) { animation-delay: 0.26s; }
+.logoBox:nth-child(5) { animation-delay: 0.33s; }
+.logoBox:nth-child(6) { animation-delay: 0.40s; }
+@keyframes partnerFadeIn {
+  from { opacity: 0; transform: translateY(32px) scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.logoBox:hover {
+  box-shadow: 0 12px 36px #00c08133, 0 0 16px #00c08144;
+  transform: scale(1.08) translateY(-8px) rotateZ(2deg);
+  border: 2px solid #00c081;
+  filter: brightness(1.04) drop-shadow(0 0 12px #00c08133);
+}
+.logo {
+  width: 64px;
+  height: 64px;
+  filter: grayscale(1) brightness(0.8) drop-shadow(0 4px 16px #00c08122);
+  transition: filter 0.22s, transform 0.22s;
+  margin-bottom: 12px;
+}
+.logoBox:hover .logo {
+  filter: none drop-shadow(0 0 24px #00c08166);
+  transform: scale(1.15) rotateZ(8deg);
+}
+.name {
+  font-size: 1.13rem;
+  color: #00996b;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px #00c08111;
+  transition: color 0.18s;
+}
+.logoBox:hover .name {
+  color: #00c081;
+}
+@media (max-width: 600px) {
+  .partners {
+    padding: 14px 2px;
+    border-radius: 12px;
+  }
+  .grid {
+    gap: 12px;
+  }
+  .logoBox {
+    padding: 12px 2px 6px 2px;
+    border-radius: 10px;
+  }
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+  .name {
+    font-size: 0.97rem;
+  }
+} 

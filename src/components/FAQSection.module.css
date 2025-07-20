@@ -1,0 +1,108 @@
+.faqs {
+  max-width: 900px;
+  margin: 0 auto 56px auto;
+  padding: 38px 12px;
+  background: linear-gradient(120deg, #e6f9f3 70%, #fff 100%);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px #00c08111;
+}
+.heading {
+  font-size: 1.28rem;
+  font-weight: 900;
+  color: #00c081;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 0 2px 8px #00c08111;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.item {
+  background: #e6f9f3;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px #00c08122;
+  border: 2px solid #e6f9f3;
+  overflow: hidden;
+  transition: box-shadow 0.22s, border 0.22s, filter 0.22s;
+  opacity: 0;
+  animation: faqFadeIn 0.7s forwards;
+}
+.item:nth-child(1) { animation-delay: 0.05s; }
+.item:nth-child(2) { animation-delay: 0.13s; }
+.item:nth-child(3) { animation-delay: 0.21s; }
+.item:nth-child(4) { animation-delay: 0.29s; }
+.item:nth-child(5) { animation-delay: 0.37s; }
+@keyframes faqFadeIn {
+  from { opacity: 0; transform: translateY(32px) scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+.item:has(.answer) {
+  box-shadow: 0 16px 48px #00c08133, 0 0 18px #00c08144;
+  border: 2px solid #00c081;
+  filter: brightness(1.04) drop-shadow(0 0 12px #00c08133);
+}
+.question {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.13rem;
+  font-weight: 800;
+  color: #00c081;
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  letter-spacing: 0.5px;
+}
+.question:hover {
+  background: #d2f5ea;
+  color: #00996b;
+}
+.arrow, .arrowOpen {
+  font-size: 1.3em;
+  transition: transform 0.18s;
+}
+.arrowOpen {
+  transform: rotate(180deg);
+}
+.answer {
+  padding: 0 32px 18px 32px;
+  color: #444;
+  font-size: 1.13rem;
+  font-weight: 500;
+  animation: answerFadeIn 0.35s;
+  background: #fff;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 2px 12px #00c08111;
+}
+@keyframes answerFadeIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 600px) {
+  .faqs {
+    padding: 12px 2px;
+    border-radius: 14px;
+  }
+  .list {
+    gap: 10px;
+  }
+  .item {
+    border-radius: 12px;
+  }
+  .question {
+    font-size: 0.99rem;
+    padding: 12px 8px;
+  }
+  .answer {
+    font-size: 0.99rem;
+    padding: 0 8px 8px 8px;
+    border-radius: 0 0 8px 8px;
+  }
+} 

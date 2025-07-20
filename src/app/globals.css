@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-family-main: var(--font-poppins), 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Animated Background */
+body {
+  background: linear-gradient(-45deg, #f5f7fa, #e6f9f3, #f0f8f5, #f8fafc);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #222;
+  font-family: var(--font-family-main);
+  transition: background 0.2s, color 0.2s;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 80px; /* Add padding for fixed navbar */
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Particles Effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 192, 129, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 192, 129, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(0, 192, 129, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: floatParticles 20s ease-in-out infinite;
+}
+
+@keyframes floatParticles {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.dark body {
+  background: #181a20;
+  color: #f7f7f7;
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism Effect for Cards */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Enhanced Button Ripple Effect */
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple-effect:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+.dark .card, .dark .cardHighlight, .dark .features, .dark .testimonials, .dark .partners, .dark .blogs, .dark .faqs, .dark .videoSection, .dark .pricing, .dark .popup {
+  background: #23262f !important;
+  color: #f7f7f7 !important;
+  border-color: #333 !important;
+  box-shadow: 0 2px 16px #0004 !important;
+}
+.dark .heading, .dark .title, .dark .name {
+  color: #00c081 !important;
+}
+.dark .desc, .dark .answer, .dark .benefits, .dark .price, .dark .more, .dark .input, .dark .cta, .dark .thankyou {
+  color: #f7f7f7 !important;
+}
+.dark .input, .dark .cta {
+  background: #23262f !important;
+  border-color: #444 !important;
+}
+.dark .cta {
+  background: linear-gradient(90deg, #e6f9f3 0%, #00c081 100%) !important;
+  color: #23262f !important;
+}
