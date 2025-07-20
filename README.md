@@ -73,7 +73,7 @@ npm start
 ```
 
 ## Triển khai demo
-- [Vercel](https://vercel.com/)
+- Public website: https://antoree-education.vercel.app/
 
 ## Liên hệ & đóng góp
 - Nếu có thắc mắc hoặc muốn đóng góp, vui lòng tạo issue hoặc pull request.
